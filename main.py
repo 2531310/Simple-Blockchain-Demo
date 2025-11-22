@@ -105,7 +105,6 @@ class Blockchain:
 
     def add_block(self, new_block):
         new_block.previous_hash = self.get_latest_block().hash
-        new_block.hash = new_block.calculate_hash()
         self.chain.append(new_block)
 
     def mine_block(self, block):
@@ -205,3 +204,4 @@ with col_right:
                     st.write("**Hash:**", block.hash)
     else:
         st.info("Chưa có Node Blockchain. Vui lòng tạo Node bên trái.")
+
